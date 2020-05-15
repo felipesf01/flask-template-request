@@ -32,10 +32,10 @@ def add():
         'add.html'
     )
 
-@app.route('/store', methods=['POST', 'GET'])
+@app.route('/store', methods=['POST'])
 def store():
     nome = request.form['nome']
-    val = request.form['val']
+    val = float(request.form['val'])
     produto.append([nome, val])
     
     return redirect('/')
